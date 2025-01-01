@@ -9,6 +9,14 @@ body {
     background-color: #f5f5f5;
 }
 
+
+.ml-20 {
+    margin-left: 20px !important;
+}
+
+.mt-20 {
+    margin-top: 40px !important;
+}
 .inno {
     display: flex;
     justify-content: center;
@@ -311,7 +319,7 @@ nav li a:hover{
 /* product */
 .product-container {
     display: flex;
-    margin: 20px 20px;
+    margin: 50px 20px;
     flex-wrap: nowrap;
     gap: 20px;
     box-sizing: border-box;
@@ -407,7 +415,7 @@ nav li a:hover{
 .banner-item {
     position: relative;
     overflow: hidden;
-    border-radius: 8px;
+    /* border-radius: 8px; */
 }
 
 .banner-item img {
@@ -501,15 +509,266 @@ nav li a:hover{
     font-size: 12px;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-    .banner-container {
-        grid-template-columns: 1fr; /* Chuyển thành 1 cột trên mobile */
-    }
+.full-width-banner {
+    display: flex;
+    width: 100vw; /* Chiếm toàn bộ chiều ngang */
+    height: 90vh; /* Chiều cao toàn màn hình */
+    overflow: hidden;
+}
 
-    .split {
-        flex-direction: column;
-    }
+.banner-item {
+    flex: 1; /* Chia đều không gian */
+    position: relative;
+    overflow: hidden;
+    justify-content: space-between;
+}
+
+.banner-item .banner-image {
+    width: 95%;
+    height: 95%;
+    object-fit: cover; /* Giúp ảnh lấp đầy phần tử mà không méo mó */
+}
+
+.banner-item .banner-title {
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #fff;
+    z-index: 2;
+}
+
+.banner-item .banner-logo {
+    position: absolute;
+    bottom: 70%;
+    left: 5%;
+    /* lam nho kic thuoc logo */
+    width: 80px;
+    height: 80px;
+    z-index: 2;
+    object-fit: contain; 
+}
+
+.banner-item .banner-logo-3 {
+    position: absolute;
+    bottom: 70%;
+    right: 5%;
+    width: 80px;
+    height: 80px;
+    z-index: 2;
+
+}
+
+.banner-item .banner-content {
+    position: absolute;
+    bottom: 10%;
+    left: 5%;
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 4px;
+    z-index: 2;
+}
+
+.banner-item .banner-content h3 {
+    font-size: 1.4rem;
+    margin: 0;
+}
+
+.banner-item .banner-content p {
+    font-size: 0.9rem;
+    margin: 5px 0;
+}
+
+.banner-item .shop-btn {
+    margin-top: 10px;
+    background: #fff;
+    color: #000;
+    padding: 8px 16px;
+    border: none;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.banner-item .shop-btn:hover {
+    background: #ccc;
+    color: red;
+}
+
+
+.active-normal {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    width: 100%; 
+    height: 80vh;
+    overflow: hidden;
+    position: relative;
+    
+}
+
+.active-normal img.actve-normal-main {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.active-normal .active-content {
+    z-index: 2;
+    position: absolute;
+    bottom: 10%;
+    left: 15%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    text-align: center;
+}
+
+
+.active-normal .active-content h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.active-normal .active-content p {
+    font-size: 1rem;
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+.active-row .colum-active-2{
+    display: flex;
+    flex: 1;
+    gap: 10px;
+    justify-content: center;
+    float: left;
+}
+.active-row .active-btn {
+    color: #000;
+    background-color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-top: 10px;
+    text-decoration: none;
+}
+
+.active-row .active-btn:hover {
+    background: #ccc;
+    color: red;
+}
+
+.hot-page {
+    display: flex;
+    /* justify-content: center;
+    align-items: center; */
+    float: left;
+    background-color: #fff;
+    width: 100%;
+    padding: 20px 0;
+    margin: 0 20px;
+    text-transform: uppercase;
+    font-size: 32px;
+
+}
+
+.hot-page:hover{
+    color: red;
+    cursor: pointer;
+}
+
+.what-hot {
+    display: flex;
+    margin: 50px 20px;
+    flex-wrap: nowrap;
+    overflow: hidden;
+    width: 100%;
+
+}
+
+
+.what-hot-title {
+    text-transform: uppercase;
+    font-size: 24px;
+    color: #000;
+    margin-bottom: 24px 24px;
+    width: 100%;
+    height: 20px
+}
+
+.what-hot-total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    width: 100%;
+} 
+
+.what-hot-item {
+    margin-right: 10px;
+}
+.what-hot-item .what-hot-image {
+    width: 300px;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.what-hot-item .what-hot-content {
+
+}
+
+.what-hot-item .what-hot-content h1{
+    margin-top: 10px;
+    font-size: 24px;
+
+}
+
+.what-hot-item .what-hot-content p{
+    font-size: 16px;
+    color: #000;
+}
+
+
+/* .what-hot-item .what-hot-content a:hover{
+    color: red;
+} */
+.what-hot-content .what-hot-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    float: left;
+    padding: 10px 20px;
+    background-color: #000;
+    font-weight: bold;
+    margin-top: 10px;
+    border-radius: 4px;
+    border: 1px solid #000;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, color 0.3s ease;
+    margin-bottom: 20px;
+}
+
+.what-hot-content .what-hot-btn a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.what-hot-content .what-hot-btn:hover {
+    background-color: #fff;
+    /* border: 1px solid #fff; */
+    cursor: pointer;
+}
+
+.what-hot-content .what-hot-btn:hover a {
+    color: #000; /* Thay đổi màu chữ khi hover */
 }
 
 
